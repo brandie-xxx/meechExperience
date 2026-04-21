@@ -1,0 +1,207 @@
+[
+  {
+    "id": 0,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "https://www.behance.net/gallery/172127453/APE-BONKEY-NFT-WEB-SITE-WEB3-CRYPTO...lets make an exact design for our own site- \"wavvvy\"",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769717210,
+      "nanos": 971000000
+    }
+  },
+  {
+    "id": 1,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Analyzing Visuals for Wavvvy**\n\nI'm deep-diving into the \"APE BONKEY\" Behance project. The goal is to distill its energetic Web3/NFT vibe into \"wavvvy.\" I'm focusing on its bold typography and the overall visual impact, extracting the key aesthetic elements to inform the new design. It's all about capturing that high-impact feel.\n\n\n**Defining Project Parameters**\n\nI've established the core visual and technical parameters. I'm visualizing vibrant neons, glitch effects, and 3D characters, alongside key UI elements like the \"Connect Wallet\" button and roadmap. The technology stack is defined: React, TypeScript, Tailwind, and Gemini API for dynamic content. I've also outlined the project's directory structure, including components, services, and constants. Further, the background will be dark, with deep purples and blacks, and the typography will be bold sans-serif. I am focusing on an architecture that emphasizes rounded corners and glassmorphism.\n\n\n**Refining Component Structure**\n\nI am now focusing on refining the core React component structure, and I am working to define individual features. I am refining the navbar with a transparent and blurred look, along with the \"Connect\" button. I am implementing an animated hero background with a prominent call to action. I am also working on adding stat components for floor price and volume. Additionally, I am constructing a gallery component with filtering and grid display, and also an AI-powered lore generation tool that is to be connected with Gemini. I have also made several minor technical checks and corrections.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769717210,
+      "nanos": 971000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769717219,
+      "nanos": 42000000
+    }
+  },
+  {
+    "id": 2,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "metadata.json",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Application metadata for wavvvy NFT website.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\n{\n  \"name\": \"wavvvy\",\n  \"description\": \"A high-energy, Web3-inspired NFT platform with a bold, futuristic aesthetic and AI-powered lore generation.\"\n}\n"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main HTML entry point with Tailwind CSS and Inter font.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>wavvvy | The Future of NFT Culture</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            font-family: 'Inter', sans-serif;\n            background-color: #050505;\n            color: #ffffff;\n            overflow-x: hidden;\n        }\n        .bg-grid-white {\n            background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.04)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E\");\n        }\n        .glow-text {\n            text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);\n        }\n    </style>\n</head>\n<body>\n    <div id=\"root\"></div>\n</body>\n</html>\n"
+            }
+          ]
+        },
+        {
+          "path": "index.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "React application entry point.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n"
+            }
+          ]
+        },
+        {
+          "path": "types.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Global type definitions for the application.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nexport interface NFT {\n  id: string;\n  name: string;\n  image: string;\n  price: string;\n  rarity: 'Common' | 'Rare' | 'Epic' | 'Legendary';\n}\n\nexport interface RoadmapItem {\n  phase: string;\n  title: string;\n  description: string;\n  status: 'completed' | 'in-progress' | 'upcoming';\n}\n\nexport interface TeamMember {\n  name: string;\n  role: string;\n  avatar: string;\n  twitter?: string;\n}\n"
+            }
+          ]
+        },
+        {
+          "path": "constants.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Global constants and mock data.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport { NFT, RoadmapItem, TeamMember } from './types';\n\nexport const NFTS: NFT[] = [\n  { id: '1', name: 'Wave #001', image: 'https://picsum.photos/seed/wav1/600/600', price: '0.42 ETH', rarity: 'Legendary' },\n  { id: '2', name: 'Wave #002', image: 'https://picsum.photos/seed/wav2/600/600', price: '0.15 ETH', rarity: 'Rare' },\n  { id: '3', name: 'Wave #003', image: 'https://picsum.photos/seed/wav3/600/600', price: '0.08 ETH', rarity: 'Common' },\n  { id: '4', name: 'Wave #004', image: 'https://picsum.photos/seed/wav4/600/600', price: '0.22 ETH', rarity: 'Epic' },\n  { id: '5', name: 'Wave #005', image: 'https://picsum.photos/seed/wav5/600/600', price: '0.12 ETH', rarity: 'Rare' },\n  { id: '6', name: 'Wave #006', image: 'https://picsum.photos/seed/wav6/600/600', price: '0.05 ETH', rarity: 'Common' },\n];\n\nexport const ROADMAP: RoadmapItem[] = [\n  { phase: 'Phase 1', title: 'The Genesis', description: 'Launch of the first 1,000 wavvvy avatars and initial community build.', status: 'completed' },\n  { phase: 'Phase 2', title: 'Oceanic Expansion', description: 'Metaspace integration and exclusive holder-only merchandise drop.', status: 'in-progress' },\n  { phase: 'Phase 3', title: 'AI Integration', description: 'Deep integration of Gemini AI to generate evolving NFT traits based on holder activity.', status: 'upcoming' },\n  { phase: 'Phase 4', title: 'DAO Governance', description: 'Decentralized control handed over to the wavvvy council.', status: 'upcoming' },\n];\n\nexport const TEAM: TeamMember[] = [\n  { name: 'Kaelo', role: 'Lead Artist & Creative', avatar: 'https://picsum.photos/seed/kaelo/200/200' },\n  { name: 'Cypher', role: 'Blockchain Architecture', avatar: 'https://picsum.photos/seed/cypher/200/200' },\n  { name: 'Luna', role: 'Community Architect', avatar: 'https://picsum.photos/seed/luna/200/200' },\n];\n"
+            }
+          ]
+        },
+        {
+          "path": "services/geminiService.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Gemini API service for generating NFT lore and vibes.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport { GoogleGenAI } from \"@google/genai\";\n\nconst ai = new GoogleGenAI({ apiKey: process.env.API_KEY });\n\nexport const generateWaveLore = async (prompt: string): Promise<string> => {\n  try {\n    const response = await ai.models.generateContent({\n      model: 'gemini-3-flash-preview',\n      contents: `You are a high-energy Web3/NFT storyteller for a brand called 'wavvvy'. \n      Generate a short, edgy, and futuristic 'manifesto' or 'lore snippet' (max 100 words) based on the following user vibe: \"${prompt}\". \n      Use cryptographic metaphors, surfing/ocean slang, and futuristic tech terms.`,\n      config: {\n        temperature: 0.9,\n        maxOutputTokens: 250,\n      }\n    });\n    return response.text || \"The waves are silent... for now. Try another vibe.\";\n  } catch (error) {\n    console.error(\"Gemini Lore Error:\", error);\n    return \"The decentralized grid is currently offline. Please reconnect later.\";\n  }\n};\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Navbar.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Responsive navigation bar with glassmorphism.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React, { useState, useEffect } from 'react';\n\nconst Navbar: React.FC = () => {\n  const [scrolled, setScrolled] = useState(false);\n\n  useEffect(() => {\n    const handleScroll = () => setScrolled(window.scrollY > 20);\n    window.addEventListener('scroll', handleScroll);\n    return () => window.removeEventListener('scroll', handleScroll);\n  }, []);\n\n  return (\n    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-6'}`}>\n      <div className=\"container mx-auto px-6 flex justify-between items-center\">\n        <div className=\"flex items-center space-x-2\">\n          <div className=\"w-8 h-8 bg-gradient-to-tr from-purple-600 to-cyan-400 rounded-lg\"></div>\n          <span className=\"text-2xl font-black tracking-tighter uppercase italic\">wavvvy</span>\n        </div>\n        \n        <div className=\"hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-widest text-white/70\">\n          <a href=\"#about\" className=\"hover:text-purple-400 transition-colors\">About</a>\n          <a href=\"#gallery\" className=\"hover:text-purple-400 transition-colors\">Gallery</a>\n          <a href=\"#roadmap\" className=\"hover:text-purple-400 transition-colors\">Roadmap</a>\n          <a href=\"#lore\" className=\"hover:text-purple-400 transition-colors\">Lore Gen</a>\n        </div>\n\n        <button className=\"bg-white text-black px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-purple-500 hover:text-white transition-all transform active:scale-95\">\n          Connect Wallet\n        </button>\n      </div>\n    </nav>\n  );\n};\n\nexport default Navbar;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Hero.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Hero section with high-energy typography and visual effects.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\n\nconst Hero: React.FC = () => {\n  return (\n    <section className=\"relative min-h-screen flex items-center justify-center pt-20 overflow-hidden\">\n      <div className=\"absolute inset-0 bg-grid-white -z-10\"></div>\n      <div className=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/20 blur-[120px] rounded-full -z-10\"></div>\n      <div className=\"absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-cyan-500/20 blur-[100px] rounded-full -z-10\"></div>\n\n      <div className=\"container mx-auto px-6 text-center z-10\">\n        <div className=\"inline-block px-4 py-1 rounded-full border border-purple-500/50 bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-8 animate-pulse\">\n          Next Gen Web3 Experience\n        </div>\n        \n        <h1 className=\"text-6xl md:text-9xl font-black italic uppercase leading-[0.9] tracking-tighter mb-8 glow-text\">\n          Ride The<br />\n          <span className=\"bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400\">Digital Wave</span>\n        </h1>\n        \n        <p className=\"max-w-xl mx-auto text-lg text-white/60 mb-10 font-medium\">\n          A collection of 8,888 hyper-evolved digital nomads residing on the Ethereum blockchain. High utility, zero friction, infinite vibes.\n        </p>\n        \n        <div className=\"flex flex-col sm:flex-row items-center justify-center gap-4\">\n          <button className=\"w-full sm:w-auto px-10 py-4 bg-purple-600 rounded-full font-bold uppercase text-sm tracking-widest hover:bg-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all\">\n            Mint Now\n          </button>\n          <button className=\"w-full sm:w-auto px-10 py-4 bg-transparent border border-white/20 rounded-full font-bold uppercase text-sm tracking-widest hover:bg-white hover:text-black transition-all\">\n            View on Opensea\n          </button>\n        </div>\n\n        <div className=\"mt-20 flex justify-center space-x-12 opacity-50\">\n          <div className=\"text-center\">\n            <div className=\"text-3xl font-black\">8.8K</div>\n            <div className=\"text-[10px] font-bold uppercase tracking-widest\">Total Items</div>\n          </div>\n          <div className=\"text-center\">\n            <div className=\"text-3xl font-black\">0.05 ETH</div>\n            <div className=\"text-[10px] font-bold uppercase tracking-widest\">Floor Price</div>\n          </div>\n          <div className=\"text-center\">\n            <div className=\"text-3xl font-black\">1.2K</div>\n            <div className=\"text-[10px] font-bold uppercase tracking-widest\">Owners</div>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default Hero;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/NFTGrid.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Grid component displaying the NFT collection.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport { NFTS } from '../constants';\n\nconst NFTGrid: React.FC = () => {\n  return (\n    <section id=\"gallery\" className=\"py-24 bg-black/40\">\n      <div className=\"container mx-auto px-6\">\n        <div className=\"flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6\">\n          <div>\n            <h2 className=\"text-4xl font-black italic uppercase tracking-tighter mb-4\">The Collection</h2>\n            <p className=\"text-white/50 max-w-md\">Every Wavvvy NFT is uniquely generated with hundreds of custom-designed traits.</p>\n          </div>\n          <div className=\"flex space-x-4\">\n             <button className=\"px-6 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-bold uppercase hover:bg-white/10 transition-all\">Filter</button>\n             <button className=\"px-6 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-bold uppercase hover:bg-white/10 transition-all\">Sort By</button>\n          </div>\n        </div>\n\n        <div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8\">\n          {NFTS.map((nft) => (\n            <div key={nft.id} className=\"group relative bg-[#111] border border-white/5 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 transform hover:-translate-y-2\">\n              <div className=\"aspect-square overflow-hidden\">\n                <img \n                  src={nft.image} \n                  alt={nft.name} \n                  className=\"w-full h-full object-cover group-hover:scale-110 transition-transform duration-700\" \n                />\n              </div>\n              <div className=\"p-6\">\n                <div className=\"flex justify-between items-start mb-4\">\n                  <div>\n                    <h3 className=\"text-xl font-bold mb-1\">{nft.name}</h3>\n                    <span className={`text-[10px] px-2 py-0.5 rounded uppercase font-bold tracking-widest ${\n                      nft.rarity === 'Legendary' ? 'bg-yellow-500/20 text-yellow-500' :\n                      nft.rarity === 'Epic' ? 'bg-purple-500/20 text-purple-500' :\n                      nft.rarity === 'Rare' ? 'bg-cyan-500/20 text-cyan-500' :\n                      'bg-white/10 text-white/50'\n                    }`}>\n                      {nft.rarity}\n                    </span>\n                  </div>\n                  <div className=\"text-right\">\n                    <div className=\"text-[10px] text-white/40 uppercase font-bold\">Price</div>\n                    <div className=\"text-lg font-black text-purple-400\">{nft.price}</div>\n                  </div>\n                </div>\n                <button className=\"w-full py-3 bg-white/5 group-hover:bg-purple-600 transition-colors rounded-xl font-bold uppercase text-[10px] tracking-[0.2em]\">\n                  Buy on Market\n                </button>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default NFTGrid;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Roadmap.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Roadmap section visualization.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport { ROADMAP } from '../constants';\n\nconst Roadmap: React.FC = () => {\n  return (\n    <section id=\"roadmap\" className=\"py-24 relative overflow-hidden\">\n      <div className=\"absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-600/10 blur-[120px] rounded-full -z-10\"></div>\n      \n      <div className=\"container mx-auto px-6\">\n        <h2 className=\"text-4xl font-black italic uppercase tracking-tighter mb-16 text-center\">The Journey</h2>\n        \n        <div className=\"max-w-4xl mx-auto space-y-12\">\n          {ROADMAP.map((item, idx) => (\n            <div key={idx} className={`flex flex-col md:flex-row gap-8 items-center ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>\n              <div className=\"flex-1 w-full\">\n                <div className={`p-8 bg-white/5 border border-white/10 rounded-3xl relative overflow-hidden group hover:border-purple-500/30 transition-all ${item.status === 'completed' ? 'border-green-500/20' : ''}`}>\n                  <div className=\"absolute top-4 right-4 text-[10px] font-black uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity\">\n                    {item.status}\n                  </div>\n                  <div className=\"text-purple-400 text-sm font-bold mb-2 uppercase tracking-widest\">{item.phase}</div>\n                  <h3 className=\"text-2xl font-black mb-4 uppercase italic tracking-tight\">{item.title}</h3>\n                  <p className=\"text-white/60 text-sm leading-relaxed\">{item.description}</p>\n                </div>\n              </div>\n              <div className=\"hidden md:flex flex-col items-center\">\n                <div className={`w-4 h-4 rounded-full ${item.status === 'completed' ? 'bg-green-500' : item.status === 'in-progress' ? 'bg-purple-500 animate-pulse' : 'bg-white/20'}`}></div>\n                {idx !== ROADMAP.length - 1 && <div className=\"w-0.5 h-24 bg-gradient-to-b from-white/20 to-transparent\"></div>}\n              </div>\n              <div className=\"flex-1 hidden md:block\"></div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default Roadmap;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/LoreGenerator.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "AI Lore generator powered by Gemini.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React, { useState } from 'react';\nimport { generateWaveLore } from '../services/geminiService';\n\nconst LoreGenerator: React.FC = () => {\n  const [vibe, setVibe] = useState('');\n  const [lore, setLore] = useState('');\n  const [loading, setLoading] = useState(false);\n\n  const handleGenerate = async () => {\n    if (!vibe.trim()) return;\n    setLoading(true);\n    const result = await generateWaveLore(vibe);\n    setLore(result);\n    setLoading(false);\n  };\n\n  return (\n    <section id=\"lore\" className=\"py-24 bg-gradient-to-b from-black to-[#0a0a0a]\">\n      <div className=\"container mx-auto px-6\">\n        <div className=\"max-w-4xl mx-auto bg-gradient-to-tr from-purple-900/40 to-cyan-900/40 p-1 rounded-[40px] shadow-2xl\">\n          <div className=\"bg-black/90 rounded-[38px] p-8 md:p-16 relative overflow-hidden\">\n            <div className=\"absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[80px] -z-10\"></div>\n            \n            <h2 className=\"text-3xl md:text-5xl font-black italic uppercase tracking-tighter mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400\">\n              AI Lore Engine\n            </h2>\n            \n            <p className=\"text-white/50 text-center mb-12 max-w-lg mx-auto\">\n              Give your NFT its own soul. Enter a vibe (e.g., \"cyberpunk neon storm\") and our Gemini-powered engine will manifest its unique wavvvy history.\n            </p>\n\n            <div className=\"flex flex-col md:flex-row gap-4 mb-8\">\n              <input \n                type=\"text\" \n                value={vibe}\n                onChange={(e) => setVibe(e.target.value)}\n                placeholder=\"Enter your vibe...\"\n                className=\"flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-purple-500 transition-all text-white\"\n              />\n              <button \n                onClick={handleGenerate}\n                disabled={loading}\n                className=\"px-10 py-4 bg-white text-black font-black uppercase text-xs tracking-widest rounded-2xl hover:bg-purple-500 hover:text-white transition-all active:scale-95 disabled:opacity-50\"\n              >\n                {loading ? 'Manifesting...' : 'Generate Lore'}\n              </button>\n            </div>\n\n            {lore && (\n              <div className=\"p-8 bg-purple-500/5 border border-purple-500/20 rounded-3xl animate-fade-in\">\n                <div className=\"text-[10px] font-black uppercase text-purple-400 tracking-[0.3em] mb-4\">Transmission Received</div>\n                <p className=\"text-xl md:text-2xl font-light italic text-white/90 leading-relaxed font-serif\">\n                  \"{lore}\"\n                </p>\n                <div className=\"mt-6 flex justify-end\">\n                   <button className=\"text-[10px] font-black uppercase tracking-widest opacity-40 hover:opacity-100 transition-opacity\">Copy Metadata</button>\n                </div>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default LoreGenerator;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Footer.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Site footer with links and branding.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\n\nconst Footer: React.FC = () => {\n  return (\n    <footer className=\"py-20 bg-black border-t border-white/5\">\n      <div className=\"container mx-auto px-6\">\n        <div className=\"grid grid-cols-1 md:grid-cols-4 gap-12 mb-20\">\n          <div className=\"md:col-span-2\">\n            <div className=\"flex items-center space-x-2 mb-6\">\n              <div className=\"w-8 h-8 bg-gradient-to-tr from-purple-600 to-cyan-400 rounded-lg\"></div>\n              <span className=\"text-3xl font-black tracking-tighter uppercase italic\">wavvvy</span>\n            </div>\n            <p className=\"text-white/40 max-w-sm mb-8\">\n              The premier destination for the digital surfer. Join the movement and secure your place in the next evolution of culture.\n            </p>\n            <div className=\"flex space-x-4\">\n               {['X', 'Discord', 'Insta', 'Opensea'].map(social => (\n                 <a key={social} href=\"#\" className=\"w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all text-xs font-bold\">{social[0]}</a>\n               ))}\n            </div>\n          </div>\n          \n          <div>\n            <h4 className=\"text-sm font-black uppercase tracking-widest mb-6\">Explore</h4>\n            <ul className=\"space-y-4 text-white/50 text-sm font-medium\">\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Marketplace</a></li>\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Staking</a></li>\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Governance</a></li>\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Whitepaper</a></li>\n            </ul>\n          </div>\n\n          <div>\n            <h4 className=\"text-sm font-black uppercase tracking-widest mb-6\">Support</h4>\n            <ul className=\"space-y-4 text-white/50 text-sm font-medium\">\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Help Center</a></li>\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Partners</a></li>\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Terms of Service</a></li>\n              <li><a href=\"#\" className=\"hover:text-purple-400 transition-colors\">Privacy Policy</a></li>\n            </ul>\n          </div>\n        </div>\n\n        <div className=\"flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-[10px] font-black uppercase tracking-widest text-white/20\">\n          <div>© 2024 WAVVVY LABS. ALL RIGHTS RESERVED.</div>\n          <div className=\"mt-4 md:mt-0\">DESIGNED FOR THE NEXT GENERATION.</div>\n        </div>\n      </div>\n    </footer>\n  );\n};\n\nexport default Footer;\n"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main application component with overall layout.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport Navbar from './components/Navbar';\nimport Hero from './components/Hero';\nimport NFTGrid from './components/NFTGrid';\nimport Roadmap from './components/Roadmap';\nimport LoreGenerator from './components/LoreGenerator';\nimport Footer from './components/Footer';\n\nconst App: React.FC = () => {\n  return (\n    <div className=\"min-h-screen bg-[#050505]\">\n      <Navbar />\n      <main>\n        <Hero />\n        \n        {/* Statistics Bar Overlay */}\n        <div className=\"relative z-10 -mt-10 px-6\">\n          <div className=\"container mx-auto\">\n             <div className=\"grid grid-cols-2 md:grid-cols-4 gap-4 p-8 bg-[#111] border border-white/10 rounded-3xl backdrop-blur-xl\">\n                <div className=\"text-center md:border-r border-white/5 last:border-0\">\n                  <div className=\"text-white/40 text-[10px] font-bold uppercase tracking-widest mb-1\">Floor Price</div>\n                  <div className=\"text-2xl font-black italic\">0.05 ETH</div>\n                </div>\n                <div className=\"text-center md:border-r border-white/5 last:border-0\">\n                  <div className=\"text-white/40 text-[10px] font-bold uppercase tracking-widest mb-1\">Total Volume</div>\n                  <div className=\"text-2xl font-black italic\">1.5K ETH</div>\n                </div>\n                <div className=\"text-center md:border-r border-white/5 last:border-0\">\n                  <div className=\"text-white/40 text-[10px] font-bold uppercase tracking-widest mb-1\">Unique Owners</div>\n                  <div className=\"text-2xl font-black italic\">4.2K</div>\n                </div>\n                <div className=\"text-center\">\n                  <div className=\"text-white/40 text-[10px] font-bold uppercase tracking-widest mb-1\">Best Offer</div>\n                  <div className=\"text-2xl font-black italic\">0.048 ETH</div>\n                </div>\n             </div>\n          </div>\n        </div>\n\n        <NFTGrid />\n        <Roadmap />\n        <LoreGenerator />\n      </main>\n      <Footer />\n    </div>\n  );\n};\n\nexport default App;\n"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": {
+      "seconds": 1769717219,
+      "nanos": 42000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769717219,
+      "nanos": 376000000
+    }
+  }
+]

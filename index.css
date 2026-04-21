@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  
+  --color-primary: #000000;
+  --color-secondary: #F97316;
+  --color-text-secondary: #6B7280;
+  --color-secondary-bg: #F9FAFB;
+  --color-border: #E5E7EB;
+
+  --radius-card: 40px;
+  --radius-modal: 48px;
+  --radius-pill: 999px;
+  --radius-input: 24px;
+  --radius-badge: 12px;
+
+  --shadow-apple-card: 0 4px 24px rgba(0,0,0,0.04);
+  --shadow-apple-hover: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-black font-poppins antialiased overflow-x-hidden;
+  }
+  ::selection {
+    @apply bg-secondary/30 text-primary;
+  }
+}
+
+@layer utilities {
+  .mesh-gradient {
+    background: 
+      radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 20%, rgba(0, 0, 0, 0.05) 0px, transparent 40%),
+      radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.1) 0px, transparent 50%),
+      radial-gradient(at 20% 80%, rgba(0, 0, 0, 0.03) 0px, transparent 40%);
+  }
+
+  .bg-glass {
+    @apply bg-white/90 backdrop-blur-2xl border border-black/5 shadow-apple-card;
+  }
+
+  .bg-glass-dark {
+    @apply bg-black/95 backdrop-blur-2xl border border-white/10 shadow-2xl;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(249, 115, 22, 0.2);
+  }
+
+  .text-editorial {
+    @apply font-extrabold tracking-[-0.04em] leading-[0.82];
+  }
+
+  @keyframes slamIn {
+    0% { transform: scale(1.2) translateY(40px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  .animate-slam {
+    animation: slamIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .rounded-card {
+    border-radius: var(--radius-card);
+  }
+  .rounded-modal {
+    border-radius: var(--radius-modal);
+  }
+  .rounded-pill {
+    border-radius: var(--radius-pill);
+  }
+  .rounded-input {
+    border-radius: var(--radius-input);
+  }
+  .rounded-badge {
+    border-radius: var(--radius-badge);
+  }
+  
+  .scale-hover {
+    @apply transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98];
+  }
+}
