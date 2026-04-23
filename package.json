@@ -1,5 +1,5 @@
 {
-  "name": "wavvvy",
+  "name": "the-meech-experience",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@google/genai": "^1.38.0",
     "@tailwindcss/vite": "^4.2.2",
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",

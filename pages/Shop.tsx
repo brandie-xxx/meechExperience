@@ -23,7 +23,7 @@ const Shop: React.FC = () => {
   }, [search, activeCategory]);
 
   return (
-    <div className="bg-white min-h-screen pb-32 pt-40 overflow-hidden">
+    <div className="bg-white min-h-screen pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-10">
@@ -80,7 +80,7 @@ const Shop: React.FC = () => {
         </div>
 
         {/* Dynamic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12 md:gap-y-20">
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((product, i) => (
               <motion.div

@@ -82,7 +82,7 @@ const CartSidebar: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-bold">Bag is empty</h3>
                     <p className="text-sm text-text-secondary">
-                      Look like you haven't added anything yet.
+                      Looks like you haven't added anything yet.
                     </p>
                   </div>
                   <button

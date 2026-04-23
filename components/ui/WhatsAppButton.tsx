@@ -1,12 +1,14 @@
-import React from 'react';
-import { MessageCircle } from 'lucide-react';
-import { motion } from 'motion/react';
-import { WHATSAPP_NUMBER } from '../../constants';
+import React from "react";
+import { MessageCircle } from "lucide-react";
+import { motion } from "motion/react";
+import { WHATSAPP_NUMBER } from "../../constants";
 
 const WhatsAppButton: React.FC = () => {
   const handleClick = () => {
-    const message = encodeURIComponent("Hello Kelly's Spice! I'd like to place an order.");
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      "Hello Meech! I'd like to place an order.",
+    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
 
   return (
