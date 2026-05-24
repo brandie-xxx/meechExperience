@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { PRODUCTS } from '../constants';
+import { useProducts } from '../context/ProductsContext';
 import ProductCard from '../components/shop/ProductCard';
 import { Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -10,15 +10,16 @@ const Shop: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState('');
   const activeCategory = searchParams.get('category') || 'all';
+  const { products } = useProducts();
 
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter(p => {
+    return products.filter(p => {
       const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || 
                            p.description.toLowerCase().includes(search.toLowerCase());
       const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [search, activeCategory]);
+  }, [products, search, activeCategory]);
 
   return (
     <div className="bg-white min-h-screen pb-16 pt-28 px-4 sm:px-6 overflow-hidden">

@@ -35,10 +35,10 @@ const Contact: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-bold text-text-secondary uppercase tracking-wider">Primary Channel</span>
                     <div className="flex gap-1.5">
-                      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} className="px-2.5 py-1 bg-secondary/15 hover:bg-secondary hover:text-white text-secondary rounded-full text-[9px] font-bold uppercase transition-all">
+                      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} className="px-2.5 py-1 bg-secondary/15 hover:bg-secondary hover:text-white text-secondary rounded-full text-[9px] font-bold transition-all">
                         WhatsApp
                       </a>
-                      <a href={`tel:+${WHATSAPP_NUMBER}`} className="px-2.5 py-1 bg-black/5 hover:bg-primary hover:text-white text-primary rounded-full text-[9px] font-bold uppercase transition-all">
+                      <a href={`tel:+${WHATSAPP_NUMBER}`} className="px-2.5 py-1 bg-black/5 hover:bg-primary hover:text-white text-primary rounded-full text-[9px] font-bold transition-all">
                         Call
                       </a>
                     </div>
@@ -51,10 +51,10 @@ const Contact: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-bold text-text-secondary uppercase tracking-wider">Alternate Channel</span>
                     <div className="flex gap-1.5">
-                      <a href={`https://wa.me/${WHATSAPP_NUMBER_ALT}`} className="px-2.5 py-1 bg-secondary/15 hover:bg-secondary hover:text-white text-secondary rounded-full text-[9px] font-bold uppercase transition-all">
+                      <a href={`https://wa.me/${WHATSAPP_NUMBER_ALT}`} className="px-2.5 py-1 bg-secondary/15 hover:bg-secondary hover:text-white text-secondary rounded-full text-[9px] font-bold transition-all">
                         WhatsApp
                       </a>
-                      <a href={`tel:+${WHATSAPP_NUMBER_ALT}`} className="px-2.5 py-1 bg-black/5 hover:bg-primary hover:text-white text-primary rounded-full text-[9px] font-bold uppercase transition-all">
+                      <a href={`tel:+${WHATSAPP_NUMBER_ALT}`} className="px-2.5 py-1 bg-black/5 hover:bg-primary hover:text-white text-primary rounded-full text-[9px] font-bold transition-all">
                         Call
                       </a>
                     </div>

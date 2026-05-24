@@ -8,7 +8,13 @@ const Footer: React.FC = () => {
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between text-[11px] font-bold text-text-secondary tracking-tight">
           <div className="space-y-1 text-center md:text-left">
-            <p>© 2026 The Meech Experience. All rights reserved.</p>
+            <p>
+              © 2026{' '}
+              <Link to="/admin" className="hover:opacity-80 transition-opacity cursor-pointer text-text-secondary select-none">
+                The Meech Experience
+              </Link>
+              . All rights reserved.
+            </p>
             <p className="font-inter tracking-widest text-[9px]">
                infrastructure by <span className="text-secondary font-black font-inter">EXXCONTRA</span>
             </p>

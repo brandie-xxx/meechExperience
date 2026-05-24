@@ -107,10 +107,9 @@ const Shipping: React.FC = () => {
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex py-3 px-6 bg-white text-primary rounded-full font-bold text-[10px] tracking-wider uppercase hover:bg-neutral-50 active:scale-95 transition-all shadow-md gap-2 items-center"
+            className="inline-flex py-3 px-6 bg-white text-primary rounded-full font-bold text-[10px] tracking-tight hover:bg-neutral-50 active:scale-95 transition-all shadow-md items-center"
           >
-            <MessageCircle className="w-4 h-4 text-secondary shrink-0" />
-            <span>Chat Dispatch</span>
+            <span>Chat with dispatch</span>
           </a>
         </motion.div>
       </div>

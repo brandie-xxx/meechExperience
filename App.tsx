@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import { CartProvider } from './context/CartContext';
+import { ProductsProvider } from './context/ProductsContext';
 import CartSidebar from './components/shop/CartSidebar';
 import ScrollToTop from './components/layout/ScrollToTop';
 import { motion, AnimatePresence } from 'motion/react';
@@ -14,6 +15,7 @@ const About = lazy(() => import('./pages/About'));
 const Shipping = lazy(() => import('./pages/Shipping'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Legal = lazy(() => import('./pages/Legal'));
+const Admin = lazy(() => import('./pages/Admin'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-white text-primary">
@@ -29,8 +31,9 @@ const App: React.FC = () => {
   const location = useLocation();
 
   return (
-    <CartProvider>
-      <ScrollToTop />
+    <ProductsProvider>
+      <CartProvider>
+        <ScrollToTop />
       <div className="flex flex-col min-h-screen relative">
         {/* Dynamic Background System */}
         <div className="fixed inset-0 pointer-events-none z-0 bg-white">
@@ -67,6 +70,7 @@ const App: React.FC = () => {
                     <Route path="/about" element={<About />} />
                     <Route path="/shipping" element={<Shipping />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/admin" element={<Admin />} />
                     <Route path="/privacy" element={<Legal title="Privacy Policy" />} />
                     <Route path="/terms" element={<Legal title="Terms of Service" />} />
                   </Routes>
@@ -78,7 +82,8 @@ const App: React.FC = () => {
           <Footer />
         </div>
       </div>
-    </CartProvider>
+      </CartProvider>
+    </ProductsProvider>
   );
 };
 

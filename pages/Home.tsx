@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { PRODUCTS, REVIEWS, SITE_ASSETS } from '../constants';
+import { REVIEWS, SITE_ASSETS } from '../constants';
+import { useProducts } from '../context/ProductsContext';
 import ProductCard from '../components/shop/ProductCard';
 
 const Home: React.FC = () => {
-  const bestSellers = PRODUCTS.filter(p => p.isBestSeller).slice(0, 4);
+  const { products } = useProducts();
+  const bestSellers = products.filter(p => p.isBestSeller).slice(0, 4);
 
   return (
     <div className="pb-16 bg-white overflow-hidden">
