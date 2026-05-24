@@ -1,12 +1,10 @@
 # THE MEECH EXPERIENCE
 
-*Top streetwear curation, apparel drops, and tailored digital interaction.*
+*Top streetwear curation, apparel drops, and tailored digital interaction website.*
 
 ---
 
-## ✦ Vision
-
-**The Meech Experience** is high-concept street culture paired web app. The platform integrates a desktop-first responsive interface, highly optimized touch targets, and a friction-free conversational checkout pathway targeted at absolute conversion optimization.
+**The Meech Experience** is high-concept street culture paired webapp. The site integrates a desktop-first responsive interface, highly optimized touch targets, and a friction-free conversational checkout pathway targeted at absolute conversion optimization.
 
 ---
 
