@@ -24,7 +24,7 @@
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 *   **Runtime & Layer**: React 18+ (Vite)
 *   **Language System**: Strict TypeScript configuration with named modules and type-safety.
