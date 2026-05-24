@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from 'motion/react';
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
 const Shop = lazy(() => import('./pages/Shop'));
-const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 const About = lazy(() => import('./pages/About'));
 const Shipping = lazy(() => import('./pages/Shipping'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -65,7 +64,6 @@ const App: React.FC = () => {
                   <Routes location={location}>
                     <Route path="/" element={<Home />} />
                     <Route path="/shop" element={<Shop />} />
-                    <Route path="/shop/:slug" element={<ProductDetail />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/shipping" element={<Shipping />} />
                     <Route path="/contact" element={<Contact />} />

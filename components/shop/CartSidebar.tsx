@@ -1,11 +1,18 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Trash2, Plus, Minus, ShoppingBag, MessageCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { WHATSAPP_NUMBER } from '../../constants';
 
 const CartSidebar: React.FC = () => {
   const { cart, removeFromCart, updateQuantity, totalPrice, isCartOpen, setIsCartOpen, clearCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleContinueShopping = () => {
+    setIsCartOpen(false);
+    navigate('/shop');
+  };
 
   const handleCheckout = () => {
     const cartSummary = cart
@@ -39,24 +46,24 @@ const CartSidebar: React.FC = () => {
             className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white z-[101] shadow-2xl flex flex-col rounded-l-modal"
           >
             {/* Header */}
-            <div className="p-8 pb-4 flex items-center justify-between">
+            <div className="p-4 sm:p-8 pb-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <ShoppingBag className="w-5 h-5 text-primary" />
                 <h2 className="text-xl font-bold tracking-tight">Your Bag</h2>
               </div>
               <button
                 onClick={() => setIsCartOpen(false)}
-                className="p-2 hover:bg-secondary-bg rounded-pill transition-colors"
+                className="p-2 hover:bg-secondary-bg rounded-full transition-colors"
               >
                 <X className="w-5 h-5 text-primary" />
               </button>
             </div>
 
             {/* Cart Items */}
-            <div className="flex-grow overflow-y-auto px-8 py-4 space-y-6">
+            <div className="flex-grow overflow-y-auto px-4 sm:px-8 py-4 space-y-6">
               {cart.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center space-y-4">
-                  <div className="w-16 h-16 bg-secondary-bg rounded-pill flex items-center justify-center">
+                  <div className="w-16 h-16 bg-secondary-bg rounded-full flex items-center justify-center">
                     <ShoppingBag className="w-6 h-6 text-text-secondary" />
                   </div>
                   <div>
@@ -64,8 +71,8 @@ const CartSidebar: React.FC = () => {
                     <p className="text-sm text-text-secondary">Look like you haven't added anything yet.</p>
                   </div>
                   <button
-                    onClick={() => setIsCartOpen(false)}
-                    className="mt-4 px-6 py-3 bg-primary text-white rounded-pill font-bold text-sm"
+                    onClick={handleContinueShopping}
+                    className="mt-4 px-6 py-3 bg-primary text-white rounded-full font-bold text-sm hover:bg-primary-dark transition-all active:scale-95"
                   >
                     Continue Shopping
                   </button>
@@ -77,28 +84,25 @@ const CartSidebar: React.FC = () => {
                     <motion.div
                       key={cartItemId}
                       layout
-                      className="flex gap-4 group"
+                      className="group py-3 border-b border-black/5 last:border-0"
                     >
-                      <div className="w-20 h-24 rounded-card overflow-hidden flex-shrink-0 bg-secondary-bg">
-                        <img src={item.images[0]} alt={item.name} className="w-full h-full object-cover" />
-                      </div>
                       <div className="flex-grow flex flex-col justify-between py-1">
                         <div className="flex justify-between items-start">
                           <div>
                             <h4 className="font-bold text-sm line-clamp-1">{item.name}</h4>
                             <p className="text-[11px] font-bold text-text-secondary tracking-tight mt-0.5">
-                              {item.category} • Size {item.selectedSize}
+                              Size {item.selectedSize}
                             </p>
                           </div>
                           <button
                             onClick={() => removeFromCart(cartItemId)}
-                            className="p-1 text-text-secondary hover:text-secondary"
+                            className="p-1 text-text-secondary hover:text-secondary text-right"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
-                        <div className="flex justify-between items-end">
-                          <div className="flex items-center space-x-3 bg-secondary-bg rounded-pill px-2 py-1">
+                        <div className="flex justify-between items-end mt-2">
+                          <div className="flex items-center space-x-3 bg-secondary-bg rounded-full px-2 py-1">
                             <button
                               onClick={() => updateQuantity(cartItemId, item.quantity - 1)}
                               className="w-6 h-6 flex items-center justify-center hover:text-secondary transition-colors"
@@ -126,12 +130,8 @@ const CartSidebar: React.FC = () => {
 
             {/* Footer */}
             {cart.length > 0 && (
-              <div className="p-8 pt-0 space-y-6">
+              <div className="p-4 sm:p-8 pt-0 space-y-6">
                 <div className="border-t border-border pt-6 space-y-2">
-                  <div className="flex justify-between text-sm font-medium">
-                    <span className="text-text-secondary">Subtotal</span>
-                    <span className="font-bold">${totalPrice.toFixed(2)}</span>
-                  </div>
                   <div className="flex justify-between text-[16px] font-bold pt-2">
                     <span>Order Total</span>
                     <span>${totalPrice.toFixed(2)}</span>
@@ -141,10 +141,9 @@ const CartSidebar: React.FC = () => {
                 <div className="pb-8">
                   <button
                     onClick={handleCheckout}
-                    className="w-full py-4 bg-primary text-white rounded-pill font-bold text-[15px] flex items-center justify-center space-x-2 shadow-apple-card hover:bg-primary-dark transition-all"
+                    className="w-full py-4 bg-primary text-white rounded-full font-bold text-[15px] flex items-center justify-center shadow-apple-card hover:bg-primary-dark transition-all"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    <span>Checkout via WhatsApp</span>
+                    <span>checkout</span>
                   </button>
                   <button
                     onClick={clearCart}

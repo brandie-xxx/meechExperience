@@ -36,8 +36,8 @@ const Navbar: React.FC = () => {
           className={cn(
             'flex items-center justify-between transition-all duration-700 px-8 py-3',
             isScrolled 
-              ? 'bg-black/90 text-white rounded-pill shadow-apple-hover backdrop-blur-xl border border-white/10' 
-              : 'bg-white/30 backdrop-blur-md rounded-pill border border-white/20'
+              ? 'bg-black/90 text-white rounded-full shadow-apple-hover backdrop-blur-xl border border-white/10' 
+              : 'bg-white/30 backdrop-blur-md rounded-full border border-white/20'
           )}
         >
           <Link to="/" className="flex items-center group relative z-10 transition-all hover:opacity-80 active:scale-95">
@@ -116,45 +116,45 @@ const Navbar: React.FC = () => {
       {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="absolute top-full left-0 right-0 overflow-hidden lg:hidden px-6 pt-4"
-          >
-            <div className="bg-black/95 backdrop-blur-2xl rounded-[48px] p-10 border border-white/10 space-y-12">
-              <div className="flex flex-col space-y-8">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <Link
-                      to={link.href}
-                      className={cn(
-                        'text-3xl font-black tracking-tighter',
-                        location.pathname === link.href ? 'text-secondary' : 'text-white'
-                      )}
-                      onClick={() => setIsOpen(false)}
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 lg:hidden"
+            />
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="absolute top-full left-0 right-0 overflow-hidden lg:hidden px-6 pt-2 z-40"
+            >
+              <div className="bg-black/95 backdrop-blur-2xl rounded-[28px] py-6 px-8 border border-white/10">
+                <div className="flex flex-col space-y-4">
+                  {navLinks.map((link, i) => (
+                    <motion.div
+                      key={link.name}
+                      initial={{ x: -10, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: i * 0.05 }}
                     >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        to={link.href}
+                        className={cn(
+                          'block text-sm font-bold tracking-tight transition-all duration-300',
+                          location.pathname === link.href ? 'text-secondary' : 'text-white/80 hover:text-white'
+                        )}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-              <div className="pt-8 border-t border-white/10 flex justify-between items-center">
-                 <div className="space-y-1">
-                    <p className="text-[10px] font-bold text-white/40">Drop Status</p>
-                    <p className="text-sm font-bold text-success">Live Now</p>
-                 </div>
-                 <div className="flex space-x-4">
-                    {/* Add social circles if needed */}
-                 </div>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
