@@ -10,7 +10,7 @@
 
 ---
 
-## 🎨 Design Philosophy & Architectural Detail
+## Design Philosophy & Architectural Detail
 
 ### 1. Distinctive Visual Identity
 *   **Typography**: Clean `Poppins` body hierarchy paired with spacious, tracking-heavy header pairings to anchor the visual mood.
