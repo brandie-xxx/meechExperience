@@ -1,12 +1,12 @@
 # THE MEECH EXPERIENCE
 
-*Exclusive streetwear curation, premium apparel drops, and tailored digital interaction. Handcrafted with precision. Design and infrastructure by EXXCONTRA.*
+*Top streetwear curation, apparel drops, and tailored digital interaction.*
 
 ---
 
-## ✦ Core Vision
+## ✦ Vision
 
-**The Meech Experience** is a visual manifestation of high-concept street culture paired with pristine, modern UI craftsmanship. Designed for elite fashion enthusiasts, the platform integrates a desktop-first responsive interface, highly optimized touch targets, and a friction-free conversational checkout pathway targeted at absolute conversion optimization.
+**The Meech Experience** is high-concept street culture paired web app. The platform integrates a desktop-first responsive interface, highly optimized touch targets, and a friction-free conversational checkout pathway targeted at absolute conversion optimization.
 
 ---
 
