@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Check, Flame } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Product } from '../../types';
 import { useCart } from '../../context/CartContext';
 
@@ -13,13 +13,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, hideBestSellerBadge 
   const { addToCart } = useCart();
   const [showSizeSelector, setShowSizeSelector] = useState(false);
   const [addedState, setAddedState] = useState(false);
-
-  // Generates a stable low stock number based on name hash for genuine urgency
-  const getStockAlert = () => {
-    const hash = product.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    const remaining = (hash % 3) + 2; // stable number between 2 and 4
-    return `Only ${remaining} left • Selling fast`;
-  };
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -64,14 +57,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, hideBestSellerBadge 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             referrerPolicy="no-referrer"
           />
-
-          {/* Scarcity Tag */}
-          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center space-x-1 border border-black/5 shadow-sm">
-            <Flame className="w-3 h-3 text-[#FF7A00]" />
-            <span className="text-[9px] font-bold text-primary tracking-tight uppercase">
-              {getStockAlert()}
-            </span>
-          </div>
           
           {/* Quick Action Overlays with Multi-Size Selector */}
           <AnimatePresence mode="wait">
